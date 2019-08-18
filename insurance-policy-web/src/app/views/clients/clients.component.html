@@ -14,7 +14,6 @@
 
 
         <table mat-table [dataSource]="dataSource" matSort>
-
             <!-- ID Column -->
             <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
@@ -50,9 +49,5 @@
         </table>
 
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-
-
-
-
     </div>
 </div>
