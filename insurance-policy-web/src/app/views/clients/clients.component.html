@@ -3,8 +3,8 @@
         <div class="title" fxLayout="row">
             Clients
             <div style="flex: 1 1 auto;"></div>
-            <button (click)="assign()" mat-raised-button color="primary" >sign up</button>
-            <button (click)="create()" mat-raised-button color="primary">sign up</button>
+            <button (click)="assign()" mat-raised-button color="primary" >assign insurance policy</button>
+            <button (click)="create()" mat-raised-button color="primary">create insurance policy</button>
 
         </div>
 
@@ -14,27 +14,29 @@
 
 
         <table mat-table [dataSource]="dataSource" matSort>
-            <!-- ID Column -->
+
             <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-                <td mat-cell *matCellDef="let row"> {{row.name_client}} </td>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
             </ng-container>
 
-            <!-- Progress Column -->
-            <ng-container matColumnDef="progress">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-                <td mat-cell *matCellDef="let row"> {{row.email}}% </td>
-            </ng-container>
-
-            <!-- Name Column -->
             <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> name </th>
+                <td mat-cell *matCellDef="let row"> {{row.name_client}}% </td>
+            </ng-container>
+
+            <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> phone </th>
                 <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
             </ng-container>
 
-            <!-- Color Column -->
-            <ng-container matColumnDef="color">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+            <ng-container matColumnDef="numInsurance">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Insurance policy </th>
+                <td mat-cell *matCellDef="let row"> {{row.numInsurance}} </td>
+            </ng-container>
+       
+            <ng-container matColumnDef="edit">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>   </th>
                 <td mat-cell *matCellDef="let row">
 
                     <button (click)="edit(row)" mat-icon-button aria-label="Edit">

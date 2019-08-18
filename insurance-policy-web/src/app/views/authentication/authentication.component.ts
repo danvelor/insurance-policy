@@ -14,6 +14,7 @@ export class AuthenticationComponent implements OnInit {
 
   user = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
+  signin = new FormControl('');
 
   constructor(
     public service: AuthenticationService, 
@@ -40,6 +41,8 @@ export class AuthenticationComponent implements OnInit {
       if(response.success){
         this.data.token= response.token;
         this.router.navigate(['clients']);
+      }else{
+        this.signin.setErrors({ invalid: true });
       }
     }, (e: any) => {  
       console.log(e);

@@ -17,7 +17,10 @@
         </div>
         <div class="container-button" fxLayout="row" fxLayoutAlign="end center">
             <button (click)="login()" mat-raised-button color="primary"
-                [disabled]="user.invalid || password.invalid">sign up</button>
+                [disabled]="user.invalid || password.invalid">sign in</button>
+        </div>
+        <div class="full-width" fxLayout="row" fxLayoutAlign="center end" style="margin-top: 10px">
+            <mat-error *ngIf="signin.hasError('invalid')">invalid login</mat-error>
         </div>
     </div>
 </div>
