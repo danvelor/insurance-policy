@@ -3,24 +3,27 @@ import { environment } from 'src/environments/environment';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { map, finalize } from 'rxjs/operators';
 import { AuthenticationModel } from 'src/app/models/authentication.model';
+import { DataProvider } from 'src/app/providers/data.provider';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
+export class ClientsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public data: DataProvider) { }
 
-  public login(body: AuthenticationModel) {
-    const url = `${environment.urlApi}`;
-
+  public getClients() {
+    // const url = `${environment.urlApi}`;
+    const url='http://www.mocky.io/v2/5d58ccff2f000011825455b9';
     const options = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        //Authentication: this.data.token
       }),
     };
 
-    return this.http.post(url, body, options).pipe(map((response: Response) => {
+    return this.http.get(url, options).pipe(map((response: Response) => {
       return response;
     }), finalize(() => {
     }));

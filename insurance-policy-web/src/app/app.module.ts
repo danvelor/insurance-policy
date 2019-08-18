@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angularmaterial/angularmaterial.module';
 import { ViewsModule } from './views/views.module';
+import { DataProvider } from './providers/data.provider';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ViewsModule } from './views/views.module';
     AngularMaterialModule,
     ViewsModule
   ],
-  providers: [],
+  providers: [DataProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

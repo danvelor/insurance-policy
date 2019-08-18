@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from './authentication.service';
 import { AuthenticationModel } from 'src/app/models/authentication.model';
 import { Router } from '@angular/router';
+import { DataProvider } from 'src/app/providers/data.provider';
 
 @Component({
   selector: 'app-authentication',
@@ -14,7 +15,10 @@ export class AuthenticationComponent implements OnInit {
   user = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
 
-  constructor(public service: AuthenticationService, public router: Router) { }
+  constructor(
+    public service: AuthenticationService, 
+    public router: Router,
+    public data: DataProvider) { }
 
   ngOnInit() {
   }
@@ -34,6 +38,7 @@ export class AuthenticationComponent implements OnInit {
       const obj = JSON.parse(json);
       console.log(obj);
       if(response.success){
+        this.data.token= response.token;
         this.router.navigate(['clients']);
       }
     }, (e: any) => {  
