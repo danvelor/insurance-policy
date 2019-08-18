@@ -6,10 +6,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ClientsComponent } from './clients/clients.component';
+import { InsurancepolicyComponent } from './insurancepolicy/insurancepolicy.component';
 
 
 @NgModule({
-  declarations: [AuthenticationComponent, ClientsComponent],
+  declarations: [AuthenticationComponent, ClientsComponent, InsurancepolicyComponent],
   imports: [
     CommonModule,
     AngularMaterialModule,
