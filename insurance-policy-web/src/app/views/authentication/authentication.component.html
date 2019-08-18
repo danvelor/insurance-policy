@@ -5,16 +5,18 @@
         </div>
         <div class="full-width">
             <mat-form-field class="full-width">
-                <input matInput placeholder="Favorite food">
+                <input matInput placeholder="User" [formControl]="user">
+                <mat-error>Este campo es requerido</mat-error>
             </mat-form-field>
         </div>
         <div class="full-width">
             <mat-form-field class="full-width">
-                <input matInput placeholder="Favorite food">
+                <input type="password" matInput placeholder="Favorite food" [formControl]="password">
+                <mat-error>Este campo es requerido</mat-error>
             </mat-form-field>
-        </div >
-        <div class="full-width"  fxLayout="row" fxLayoutAlign="end center"> 
-            <button mat-raised-button color="primary">Primary</button>
+        </div>
+        <div class="container-button" fxLayout="row" fxLayoutAlign="end center">
+            <button (click)="login()" mat-raised-button color="primary" [disabled]="user.invalid || password.invalid">Primary</button>
         </div>
     </div>
 </div>

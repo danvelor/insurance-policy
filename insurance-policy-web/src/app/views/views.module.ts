@@ -3,14 +3,20 @@ import { CommonModule } from '@angular/common';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { AngularMaterialModule } from '../modules/angularmaterial/angularmaterial.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ClientsComponent } from './clients/clients.component';
 
 
 @NgModule({
-  declarations: [AuthenticationComponent],
+  declarations: [AuthenticationComponent, ClientsComponent],
   imports: [
     CommonModule,
     AngularMaterialModule,
-    FlexLayoutModule 
+    FlexLayoutModule ,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class ViewsModule { }
