@@ -28,11 +28,14 @@ export class AuthenticationComponent implements OnInit {
 
 
     this.service.login(body).subscribe((response: any) => {
+      console.log(body);
       console.log(response);
       const json = atob(response.token);
       const obj = JSON.parse(json);
       console.log(obj);
-      this.router.navigate(['clients']);
+      if(response.success){
+        this.router.navigate(['clients']);
+      }
     }, (e: any) => {  
       console.log(e);
     })

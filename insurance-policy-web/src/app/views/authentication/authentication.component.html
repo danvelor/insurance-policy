@@ -1,22 +1,22 @@
 <div class="view-authentication" fxLayout="row" fxLayoutAlign="center center">
     <div class="container mat-elevation-z2" fxLayout="column" fxLayoutAlign="center center">
         <div class="title" fxLayout="row" fxLayoutAlign="center center">
-            Iniciar sesión
+            Login
         </div>
         <div class="full-width">
             <mat-form-field class="full-width">
                 <input matInput placeholder="User" [formControl]="user">
-                <mat-error>Este campo es requerido</mat-error>
+                <mat-error>This field is requested</mat-error>
             </mat-form-field>
         </div>
         <div class="full-width">
             <mat-form-field class="full-width">
-                <input type="password" matInput placeholder="Favorite food" [formControl]="password">
-                <mat-error>Este campo es requerido</mat-error>
+                <input type="password" matInput placeholder="password" [formControl]="password">
+                <mat-error>This field is requested</mat-error>
             </mat-form-field>
         </div>
         <div class="container-button" fxLayout="row" fxLayoutAlign="end center">
-            <button (click)="login()" mat-raised-button color="primary" [disabled]="user.invalid || password.invalid">Primary</button>
+            <button (click)="login()" mat-raised-button color="primary" [disabled]="user.invalid || password.invalid">sign up</button>
         </div>
     </div>
 </div>
