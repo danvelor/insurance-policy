@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>insurance-policy.api</name>
+    </assembly>
+    <members>
+        <member name="M:insurance_policy.api.Controllers.InsuranceController.Get">
+            <summary>
+            Metodo para obtener el resumen de las polizas de los clientes.
+            </summary>
+            <returns>Retorna lista con la informacion de las polizas agrupado en numero por cliente</returns>
+        </member>
+    </members>
+</doc>

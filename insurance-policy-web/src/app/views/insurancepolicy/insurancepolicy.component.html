@@ -1,1 +1,33 @@
-<p>insurancepolicy works!</p>
+<div class="view-insurancepolicy" fxLayout="row" fxLayoutAlign="center center">
+    <div class="container mat-elevation-z2" fxLayout="column">
+        <div class="title" fxLayout="row">
+            Insurance Policy
+        </div>
+        <div class="full-width">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="id" [formControl]="id">
+                <mat-error>This field is requested</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="full-width">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="name" [formControl]="name">
+                <mat-error>This field is requested</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="full-width">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="description" [formControl]="description">
+                <mat-error>This field is requested</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="full-width">
+            <mat-form-field>
+                <mat-label>coverage</mat-label>
+                <mat-select [formControl]="coverage" multiple>
+                    <mat-option *ngFor="let coverage of coverageList" [value]="coverage">{{coverage}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

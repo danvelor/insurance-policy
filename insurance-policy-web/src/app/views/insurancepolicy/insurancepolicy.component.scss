@@ -1,0 +1,22 @@
+.view-insurancepolicy{
+    height: 100vh;
+
+    .container{
+        width: 50%;
+        margin: 15px;
+        padding: 20px 20px 0 20px;
+    }
+
+    .title{
+        font-size: 25px;
+        button{
+        text-transform: uppercase;
+        margin: 0 5px
+        }
+    }
+
+    table {
+        width: 100%;
+      }
+
+}

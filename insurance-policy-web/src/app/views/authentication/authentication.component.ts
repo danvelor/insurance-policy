@@ -17,7 +17,7 @@ export class AuthenticationComponent implements OnInit {
   signin = new FormControl('');
 
   constructor(
-    public service: AuthenticationService, 
+    public service: AuthenticationService,
     public router: Router,
     public data: DataProvider) { }
 
@@ -25,29 +25,25 @@ export class AuthenticationComponent implements OnInit {
   }
 
   login() {
-
-    const body: AuthenticationModel ={   
+    const body: AuthenticationModel = {
       user: this.user.value,
       password: this.password.value
     };
-
-
     this.service.login(body).subscribe((response: any) => {
       console.log(body);
       console.log(response);
       const json = atob(response.token);
       const obj = JSON.parse(json);
       console.log(obj);
-      if(response.success){
-        this.data.token= response.token;
+      if (response.success) {
+        this.data.token = response.token;
         this.router.navigate(['clients']);
-      }else{
+      } else {
         this.signin.setErrors({ invalid: true });
       }
-    }, (e: any) => {  
+    }, (e: any) => {
       console.log(e);
     })
-
   }
 
 }

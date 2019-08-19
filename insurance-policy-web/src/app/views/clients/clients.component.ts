@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DataProvider } from 'src/app/providers/data.provider';
 import { ClientsService } from './clients.service';
 import { clientsmodel } from 'src/app/models/clients.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clients',
@@ -12,13 +13,15 @@ import { clientsmodel } from 'src/app/models/clients.model';
   styleUrls: ['./clients.component.scss']
 })
 export class ClientsComponent implements OnInit {
-  displayedColumns: string[] = [ 'name', 'phone', 'numInsurance', 'edit'];
+  displayedColumns: string[] = ['name', 'phone', 'numInsurance', 'edit'];
   dataSource: MatTableDataSource<clientsmodel>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(public data: DataProvider, public service: ClientsService) {
+  constructor(public data: DataProvider
+    , public service: ClientsService
+    , public router: Router) {
     console.log(data.token);
 
     service.getClients().subscribe((response: any) => {
@@ -34,6 +37,11 @@ export class ClientsComponent implements OnInit {
   edit(row: any) {
     console.log(row);
   }
+
+  create() {
+    this.router.navigate(['insurancepolicy']);
+  }
+
 
   ngOnInit() {
 

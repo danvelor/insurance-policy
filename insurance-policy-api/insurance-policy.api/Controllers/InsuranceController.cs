@@ -2,19 +2,39 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using insurance_policy.api.Dtos;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.Swagger.Annotations;
 
 namespace insurance_policy.api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class InsuranceController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        /// <summary>
+        /// Metodo para obtener el resumen de las polizas de los clientes.
+        /// </summary>
+        /// <returns>Retorna lista con la informacion de las polizas agrupado en numero por cliente</returns>        
+        [HttpGet()]
+        [SwaggerResponse(200, Type = typeof(List<PolicyClient>))]
+        public ActionResult<List<PolicyClient>> Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                List<PolicyClient> lspolicyClients = new List<PolicyClient>();
+
+
+
+
+                return lspolicyClients;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // GET api/values/5
