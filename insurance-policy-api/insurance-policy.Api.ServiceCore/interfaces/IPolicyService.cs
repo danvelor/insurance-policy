@@ -8,5 +8,7 @@ namespace insurance_policy.Api.ServiceCore.interfaces
     public interface IPolicyService
     {
         List<Assigment> GetAssigment();
+
+        List<AssigmentDetail> GetAssigmentDetail(int id);
     }
 }

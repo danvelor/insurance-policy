@@ -7,9 +7,8 @@ namespace insurance_policy.Api.Infrastructure.Data
     public class InsuranceContext: DbContext
     {
         public DbSet<Assigment> Assigment { get; set; }
+        public DbSet<AssigmentDetail> AssigmentDetail { get; set; }
         
-
-
         public string Connection { get; set; }
         public InsuranceContext(string sqlConnectionString)
         {
@@ -30,6 +29,9 @@ namespace insurance_policy.Api.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Assigment>()
+            .HasKey(x => x.Id);
+
+            modelBuilder.Entity<AssigmentDetail>()
             .HasKey(x => x.Id);
         }
     }

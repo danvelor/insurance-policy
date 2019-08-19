@@ -45,5 +45,23 @@ namespace insurance_policy.Api.Infrastructure.Repositories
 
             return Assigment;
         }
+
+
+        public List<AssigmentDetail> GetAssigmentDetail(int id)
+        {
+            StringBuilder sqlQuery = new StringBuilder();
+
+            sqlQuery.Append(" select p.IdPolicy Id,p.Name,p.Description,p.Type,co.[percent], a.StartDate, a.Duration, p.Cost, p.Risk");
+            sqlQuery.Append(" from Assigment a  ");
+            sqlQuery.Append(" inner join clients c on a.IdCliente=c.Idclient");
+            sqlQuery.Append(" inner join Policy p on a.IdPolicy = p.IdPolicy");
+            sqlQuery.Append(" inner join Cover co on p.Type = co.type");
+            sqlQuery.Append(" where c.Idclient = {0}");
+
+            var AssigmentDetail = this.Context.AssigmentDetail.FromSql(sqlQuery.ToString(), id.ToString()).AsNoTracking().ToList();
+           
+            return AssigmentDetail;
+        }
+
     }
 }

@@ -8,5 +8,6 @@ namespace insurance_policy.Api.Infrastructure.interfaces
     public  interface IPolicyRepository : IEntityBaseRepository<Assigment>
     {
         List<Assigment> GetAssigment();
+        List<AssigmentDetail> GetAssigmentDetail(int id);
     }
 }

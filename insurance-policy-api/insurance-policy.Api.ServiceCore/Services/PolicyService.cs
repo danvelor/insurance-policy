@@ -20,6 +20,11 @@ namespace insurance_policy.Api.ServiceCore.Services
             return PolicyRepository.GetAssigment();
         }
 
+        public List<AssigmentDetail> GetAssigmentDetail(int id)
+        {
+            return PolicyRepository.GetAssigmentDetail(id);
+        }
+
 
     }
 

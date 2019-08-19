@@ -10,5 +10,11 @@
             </summary>
             <returns>Retorna lista con la informacion de las polizas agrupado en numero por cliente</returns>        
         </member>
+        <member name="M:insurance_policy.api.Controllers.InsuranceController.Get(System.Int32)">
+            <summary>
+            Metodo para obtener el detalle de las polizas por cliente.
+            </summary>
+            <returns>Retorna lista con la información de las polizas de un cliente</returns>        
+        </member>
     </members>
 </doc>

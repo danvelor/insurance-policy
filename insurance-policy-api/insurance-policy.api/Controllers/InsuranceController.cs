@@ -49,11 +49,19 @@ namespace insurance_policy.api.Controllers
             }
         }
 
-        // GET api/values/5
+        /// <summary>
+        /// Metodo para obtener el detalle de las polizas por cliente.
+        /// </summary>
+        /// <returns>Retorna lista con la información de las polizas de un cliente</returns>        
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<List<PolicyClientDetail>> Get(int id)
         {
-            return "value";
+            List<PolicyClientDetail> lspolicyClientDetail = new List<PolicyClientDetail>();
+
+            lspolicyClientDetail = AssigmentDetailtoPolicyClientDetail.ToPolicyClientDetail(PolicyService.GetAssigmentDetail(id));
+
+
+            return lspolicyClientDetail;
         }
 
         // POST api/values
