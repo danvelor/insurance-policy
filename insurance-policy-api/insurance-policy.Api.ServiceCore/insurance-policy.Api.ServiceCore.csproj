@@ -1,8 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>insurance_policy.Api.ServiceCore</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\insurance-policy.Api.Infrastructure\insurance-policy.Api.Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>

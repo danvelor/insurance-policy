@@ -8,7 +8,7 @@
             <summary>
             Metodo para obtener el resumen de las polizas de los clientes.
             </summary>
-            <returns>Retorna lista con la informacion de las polizas agrupado en numero por cliente</returns>
+            <returns>Retorna lista con la informacion de las polizas agrupado en numero por cliente</returns>        
         </member>
     </members>
 </doc>

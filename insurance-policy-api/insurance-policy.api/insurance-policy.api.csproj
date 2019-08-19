@@ -20,4 +20,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\insurance-policy.Api.Infrastructure\insurance-policy.Api.Infrastructure.csproj" />
+    <ProjectReference Include="..\insurance-policy.Api.ServiceCore\insurance-policy.Api.ServiceCore.csproj" />
+  </ItemGroup>
+
 </Project>

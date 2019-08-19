@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using insurance_policy.Api.Infrastructure.Data;
+using insurance_policy.Api.Infrastructure.interfaces;
+using insurance_policy.Api.Infrastructure.Repositories;
+using insurance_policy.Api.ServiceCore.interfaces;
+using insurance_policy.Api.ServiceCore.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -48,25 +53,10 @@ namespace insurance_policy.api
             #region Dependency Container
             string connection = Configuration.GetValue<string>("ConnectionStrings:ConnectionString");
             
-            //services.AddScoped(p => new FuelManagementContext(connection));
-            //services.AddScoped<IVehiclesRepository, VehiclesRepository>();
-            //services.AddScoped<IFuelFallsRepository, FuelFallsRepository>();
-            //services.AddScoped<IFuelIncreasesRepository, FuelIncreasesRepository>();
-            //services.AddScoped<IFuelPerformanceRepository, FuelPerformanceRepository>();
-            //services.AddScoped<IRatingRepository, RatingRepository>();
-            //services.AddScoped<IAnnotationRepository, AnnotationRepository>();
-            //services.AddScoped<ITankDetailRepository, TankDetailRepository>();
-            //services.AddScoped<IRepository>(q => new ConsumptionApproximateSettingsRepository(storageConnection, tableNameEvent));
-            //services.AddScoped<IConsumptionApproximateReportRepository>(x => consumptionApproximateReportRepository);
-            //services.AddScoped<IConsumptionApproximateSettingsService, ConsumptionApproximateSettingsService>();
+            services.AddScoped(p => new InsuranceContext(connection));
+            services.AddScoped<IPolicyRepository, PolicyRepository>();
 
-            //services.AddScoped<IVehicleService, VehicleService>();
-            //services.AddScoped<IFuelService, FuelService>();
-            //services.AddScoped<IFallService, FallService>();
-            //services.AddScoped<IIncreaseService, IncreaseService>();
-            //services.AddScoped<ITankService, TankService>();
-            //services.AddScoped<IConsumptionApproximateReportService>(x => new ConsumptionApproximateReportService(consumptionApproximateReportRepository, new ConsumptionApproximateSettingsService(new ConsumptionApproximateSettingsRepository(storageConnection, tableNameEvent))));
-
+            services.AddScoped<IPolicyService, PolicyService>();
             #endregion
         }
 

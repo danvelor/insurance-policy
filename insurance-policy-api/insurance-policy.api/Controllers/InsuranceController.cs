@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using insurance_policy.api.Dtos;
+using insurance_policy.api.Mappers;
+using insurance_policy.Api.Infrastructure.interfaces;
+using insurance_policy.Api.ServiceCore.interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.Swagger.Annotations;
 
@@ -12,6 +15,15 @@ namespace insurance_policy.api.Controllers
     [ApiController]
     public class InsuranceController : ControllerBase
     {
+        public IPolicyService PolicyService { get; set; }
+        public IPolicyRepository PolicyRepository { get; set; }
+
+        public InsuranceController(IPolicyService policyService, IPolicyRepository policyRepository)
+        {
+            this.PolicyService = policyService;
+            PolicyRepository = policyRepository;
+        }
+
         /// <summary>
         /// Metodo para obtener el resumen de las polizas de los clientes.
         /// </summary>
@@ -24,13 +36,13 @@ namespace insurance_policy.api.Controllers
             {
                 List<PolicyClient> lspolicyClients = new List<PolicyClient>();
 
-
+                lspolicyClients = AssigmenttoPolicyClient.ToPolicyClient(PolicyService.GetAssigment());
 
 
                 return lspolicyClients;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
@@ -46,8 +58,13 @@ namespace insurance_policy.api.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] PolicyClient value)
         {
+
+            
+
+            //PolicyRepository.Add(Assigment);
+            //PolicyRepository.Commit();
         }
 
         // PUT api/values/5
