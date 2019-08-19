@@ -25,6 +25,10 @@ namespace insurance_policy.Api.ServiceCore.Services
             return PolicyRepository.GetAssigmentDetail(id);
         }
 
+        public Auth GetAuth(string User, string Password)
+        {
+            return PolicyRepository.GetAuth(User, Password);
+        }
 
     }
 

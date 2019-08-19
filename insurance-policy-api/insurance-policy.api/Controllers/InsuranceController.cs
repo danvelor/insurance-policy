@@ -54,6 +54,7 @@ namespace insurance_policy.api.Controllers
         /// </summary>
         /// <returns>Retorna lista con la información de las polizas de un cliente</returns>        
         [HttpGet("{id}")]
+        [SwaggerResponse(200, Type = typeof(List<PolicyClientDetail>))]
         public ActionResult<List<PolicyClientDetail>> Get(int id)
         {
             List<PolicyClientDetail> lspolicyClientDetail = new List<PolicyClientDetail>();
@@ -64,27 +65,5 @@ namespace insurance_policy.api.Controllers
             return lspolicyClientDetail;
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] PolicyClient value)
-        {
-
-            
-
-            //PolicyRepository.Add(Assigment);
-            //PolicyRepository.Commit();
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

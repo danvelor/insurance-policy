@@ -63,5 +63,18 @@ namespace insurance_policy.Api.Infrastructure.Repositories
             return AssigmentDetail;
         }
 
+        public Auth GetAuth(string User, string Password)
+        {
+            StringBuilder sqlQuery = new StringBuilder();
+
+            sqlQuery.Append(" if exists(select * from Users u where u.[User] = {0} and u.Password = {1})");
+            sqlQuery.Append(" select 'OK' Status");
+            sqlQuery.Append(" else select 'NO' Status ");
+
+            var auth = this.Context.Auth.FromSql(sqlQuery.ToString(), User, Password).AsNoTracking().FirstOrDefault();
+
+            return auth;
+        }
+
     }
 }

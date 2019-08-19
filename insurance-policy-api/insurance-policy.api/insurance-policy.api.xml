@@ -16,5 +16,13 @@
             </summary>
             <returns>Retorna lista con la información de las polizas de un cliente</returns>        
         </member>
+        <member name="M:insurance_policy.api.Controllers.LoginController.Get(System.String,System.String)">
+            <summary>
+            Metodo para validación de ingreso.
+            </summary>
+            <param name="user">Usuario</param>
+            <param name="pass">Contraseña</param>
+            <returns>Retorna una respuesta acceso o negación</returns>  
+        </member>
     </members>
 </doc>

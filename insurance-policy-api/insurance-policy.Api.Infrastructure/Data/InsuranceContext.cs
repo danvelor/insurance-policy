@@ -8,7 +8,9 @@ namespace insurance_policy.Api.Infrastructure.Data
     {
         public DbSet<Assigment> Assigment { get; set; }
         public DbSet<AssigmentDetail> AssigmentDetail { get; set; }
-        
+        public DbSet<Auth> Auth { get; set; }
+
+
         public string Connection { get; set; }
         public InsuranceContext(string sqlConnectionString)
         {
@@ -33,6 +35,10 @@ namespace insurance_policy.Api.Infrastructure.Data
 
             modelBuilder.Entity<AssigmentDetail>()
             .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Auth>()
+                .HasKey(x=>x.Status);
+           
         }
     }
 }

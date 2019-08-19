@@ -9,5 +9,6 @@ namespace insurance_policy.Api.Infrastructure.interfaces
     {
         List<Assigment> GetAssigment();
         List<AssigmentDetail> GetAssigmentDetail(int id);
+        Auth GetAuth(string User, string Password);
     }
 }
