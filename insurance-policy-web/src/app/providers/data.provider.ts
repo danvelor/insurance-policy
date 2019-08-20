@@ -17,19 +17,19 @@ export class DataProvider {
     this.TOKEN = v;
   }
 
-  public get idclient():string{
+  public get idclient(): string {
     return this.IDCLIENT;
   }
 
-  public set idclient(v:string){
+  public set idclient(v: string) {
     this.IDCLIENT = v;
   }
 
-  public get nameclient():string{
+  public get nameclient(): string {
     return this.NAMECLIENT;
   }
 
-  public set nameclient(v:string){
+  public set nameclient(v: string) {
     this.NAMECLIENT = v;
   }
 

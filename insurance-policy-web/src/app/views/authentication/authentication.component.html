@@ -1,26 +1,26 @@
 <div class="view-authentication" fxLayout="row" fxLayoutAlign="center center">
-    <div class="container mat-elevation-z2" fxLayout="column" fxLayoutAlign="center center">
-        <div class="title" fxLayout="row" fxLayoutAlign="center center">
-            Login
-        </div>
-        <div class="full-width">
-            <mat-form-field class="full-width">
-                <input matInput placeholder="User" [formControl]="user">
-                <mat-error>This field is requested</mat-error>
-            </mat-form-field>
-        </div>
-        <div class="full-width">
-            <mat-form-field class="full-width">
-                <input type="password" matInput placeholder="password" [formControl]="password">
-                <mat-error>This field is requested</mat-error>
-            </mat-form-field>
-        </div>
-        <div class="container-button" fxLayout="row" fxLayoutAlign="end center">
-            <button (click)="login()" mat-raised-button color="primary"
-                [disabled]="user.invalid || password.invalid">sign in</button>
-        </div>
-        <div class="full-width" fxLayout="row" fxLayoutAlign="center end" style="margin-top: 10px">
-            <mat-error *ngIf="signin.hasError('invalid')">invalid login</mat-error>
-        </div>
+  <div class="container mat-elevation-z2" fxLayout="column" fxLayoutAlign="center center">
+    <div class="title" fxLayout="row" fxLayoutAlign="center center">
+      Log In
     </div>
+    <div class="full-width">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="User" [formControl]="user">
+        <mat-error>This field is requested</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="full-width">
+      <mat-form-field class="full-width">
+        <input type="password" matInput placeholder="Password" [formControl]="password">
+        <mat-error>This field is requested</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="container-button" fxLayout="row" fxLayoutAlign="end center">
+      <button (click)="login()" mat-raised-button color="primary" [disabled]="user.invalid || password.invalid">sign
+        in</button>
+    </div>
+    <div class="full-width" fxLayout="row" fxLayoutAlign="center end" style="margin-top: 10px">
+      <mat-error *ngIf="signin.hasError('invalid')">invalid login</mat-error>
+    </div>
+  </div>
 </div>

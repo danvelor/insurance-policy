@@ -19,10 +19,11 @@ export class ClientsComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(public data: DataProvider
-    , public service: ClientsService
-    , public router: Router) {
- 
+  constructor(
+    public data: DataProvider,
+    public service: ClientsService,
+    public router: Router) {
+
 
     service.getClients().subscribe((response: any) => {
       console.log(response);
@@ -37,6 +38,7 @@ export class ClientsComponent implements OnInit {
   edit(row: any) {
     console.log(row);
     this.data.idclient = row.clientId;
+    this.data.nameclient = row.clientName;
     this.router.navigate(['Clientdetail']);
   }
 
