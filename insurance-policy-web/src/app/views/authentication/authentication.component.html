@@ -1,17 +1,21 @@
 <div class="view-authentication" fxLayout="row" fxLayoutAlign="center center">
   <div class="container mat-elevation-z2" fxLayout="column" fxLayoutAlign="center center">
-    <div class="title" fxLayout="row" fxLayoutAlign="center center">
-      Log In
+    <div style="width: 100%; margin-bottom: 45px">
+      <img src="./assets/img/Logo.png" alt="" style="width: 100%; height: 100%;">
+
+    </div>
+    <div class="title" fxLayout="row" fxLayoutAlign="start center">
+      Log In!
     </div>
     <div class="full-width">
       <mat-form-field class="full-width">
-        <input matInput placeholder="User" [formControl]="user">
+        <input matInput placeholder="User" [formControl]="user" required>
         <mat-error>This field is requested</mat-error>
       </mat-form-field>
     </div>
     <div class="full-width">
       <mat-form-field class="full-width">
-        <input type="password" matInput placeholder="Password" [formControl]="password">
+        <input type="password" matInput placeholder="Password" [formControl]="password" required>
         <mat-error>This field is requested</mat-error>
       </mat-form-field>
     </div>
@@ -20,7 +24,7 @@
         in</button>
     </div>
     <div class="full-width" fxLayout="row" fxLayoutAlign="center end" style="margin-top: 10px">
-      <mat-error *ngIf="signin.hasError('invalid')">invalid login</mat-error>
+      <mat-error *ngIf="signin.hasError('invalid')">User or password invalid.</mat-error>
     </div>
   </div>
 </div>

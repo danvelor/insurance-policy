@@ -6,10 +6,11 @@ import { InsurancepolicyComponent } from './views/insurancepolicy/insurancepolic
 import { ClientdetailComponent } from './views/clientdetail/clientdetail.component';
 
 const routes: Routes = [
-  {path:'auth', component: AuthenticationComponent},
-  {path:'clients', component: ClientsComponent},
-  {path:'insurancepolicy', component: InsurancepolicyComponent},
-  {path:'Clientdetail', component: ClientdetailComponent}
+  { path: 'auth', component: AuthenticationComponent },
+  { path: 'clients', component: ClientsComponent },
+  { path: 'insurancepolicy', component: InsurancepolicyComponent },
+  { path: 'Clientdetail', component: ClientdetailComponent },
+  { path: '**', redirectTo: 'auth' }
 ];
 
 @NgModule({
