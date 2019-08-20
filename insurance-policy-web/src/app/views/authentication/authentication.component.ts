@@ -29,14 +29,8 @@ export class AuthenticationComponent implements OnInit {
       user: this.user.value,
       password: this.password.value
     };
-    this.service.login(body).subscribe((response: any) => {
-      console.log(body);
-      console.log(response);
-      const json = atob(response.token);
-      const obj = JSON.parse(json);
-      console.log(obj);
-      if (response.success) {
-        this.data.token = response.token;
+    this.service.login(body).subscribe((response: any) => {     
+      if (response.status == "OK") {
         this.router.navigate(['clients']);
       } else {
         this.signin.setErrors({ invalid: true });

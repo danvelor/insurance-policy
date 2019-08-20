@@ -22,7 +22,7 @@ export class ClientsComponent implements OnInit {
   constructor(public data: DataProvider
     , public service: ClientsService
     , public router: Router) {
-    console.log(data.token);
+ 
 
     service.getClients().subscribe((response: any) => {
       console.log(response);
@@ -36,6 +36,8 @@ export class ClientsComponent implements OnInit {
 
   edit(row: any) {
     console.log(row);
+    this.data.idclient = row.clientId;
+    this.router.navigate(['Clientdetail']);
   }
 
   create() {

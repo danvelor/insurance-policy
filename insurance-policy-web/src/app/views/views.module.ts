@@ -7,10 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ClientsComponent } from './clients/clients.component';
 import { InsurancepolicyComponent } from './insurancepolicy/insurancepolicy.component';
+import { ClientdetailComponent } from './clientdetail/clientdetail.component';
 
 
 @NgModule({
-  declarations: [AuthenticationComponent, ClientsComponent, InsurancepolicyComponent],
+  declarations: [AuthenticationComponent, ClientsComponent, InsurancepolicyComponent, ClientdetailComponent],
   imports: [
     CommonModule,
     AngularMaterialModule,

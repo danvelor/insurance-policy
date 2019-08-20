@@ -14,8 +14,8 @@ export class ClientsService {
   constructor(private http: HttpClient, public data: DataProvider) { }
 
   public getClients() {
-    // const url = `${environment.urlApi}`;
-    const url='http://www.mocky.io/v2/5d59a1dc3000006c2ed84c77';
+     const url = `${environment.urlApi}/Insurance`;
+    //const url='http://www.mocky.io/v2/5d59a1dc3000006c2ed84c77';
     const options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ export class InsurancepolicyComponent implements OnInit {
     public service: InsurancepolicyService,
     public data: DataProvider,
     public route: Router) { 
-      console.log(data.token);
+      
 
     }
   ngOnInit() {

@@ -30,7 +30,7 @@ namespace insurance_policy.api.Controllers
         /// <returns>Retorna una respuesta acceso o negación</returns>  
         [HttpGet("{user}/{password}")]
         [SwaggerResponse(200, Type = typeof(PolicyAuth))]
-        public ActionResult<PolicyAuth> Get(string user, string password, string origin)
+        public ActionResult<PolicyAuth> Get(string user, string password)
         {
 
             PolicyAuth policyAuth;
