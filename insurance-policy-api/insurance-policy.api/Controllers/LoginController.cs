@@ -28,14 +28,13 @@ namespace insurance_policy.api.Controllers
         /// <param name="user">Usuario</param>
         /// <param name="pass">Contraseña</param>
         /// <returns>Retorna una respuesta acceso o negación</returns>  
-        [HttpGet()]
+        [HttpGet("{user}/{password}")]
         [SwaggerResponse(200, Type = typeof(PolicyAuth))]
-        public ActionResult<PolicyAuth> Get(string User, string Password)
+        public ActionResult<PolicyAuth> Get(string user, string password, string origin)
         {
 
             PolicyAuth policyAuth;
-            policyAuth = AuthtoPolicyAuth.ToPolicyAuth(PolicyService.GetAuth(User, Password));
-
+            policyAuth = AuthtoPolicyAuth.ToPolicyAuth(PolicyService.GetAuth(user, password));
 
             return policyAuth;
         }

@@ -15,6 +15,9 @@ export class InsurancepolicyComponent implements OnInit {
   description = new FormControl('', [Validators.required]);
   
   coverage = new FormControl();
+   x:any = {
+    
+  }
   coverageList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
   constructor(

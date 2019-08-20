@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>insurance_policy.api</RootNamespace>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,6 +26,12 @@
   <ItemGroup>
     <ProjectReference Include="..\insurance-policy.Api.Infrastructure\insurance-policy.Api.Infrastructure.csproj" />
     <ProjectReference Include="..\insurance-policy.Api.ServiceCore\insurance-policy.Api.ServiceCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="insurance-policy.api.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

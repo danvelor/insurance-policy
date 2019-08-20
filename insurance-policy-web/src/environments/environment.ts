@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApi:"http://www.mocky.io/v2/5d5880192f0000957054559b"
+  urlApi:"https://insuranceapitest1.azurewebsites.net/api"
 };
 
 /*
